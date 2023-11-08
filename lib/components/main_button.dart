@@ -4,6 +4,8 @@ class MainButton extends StatelessWidget {
   const MainButton(
       {super.key, required this.icon, required this.text, required this.onTap, this.color});
 
+  // This widget is for generating button in the home page
+
   final IconData? icon;
   final String text;
   final Color? color;

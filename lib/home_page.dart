@@ -7,14 +7,9 @@ import 'components/main_button.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+  // This widget is the home page of the app.
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  // This class is the configuration for the state.
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -33,7 +28,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Center(
-          child: Text("Inventor", textAlign: TextAlign.center, style: GoogleFonts.roboto()),
+          child: Text("Inventor",
+              textAlign: TextAlign.center, style: GoogleFonts.roboto()),
         ),
       ),
       body: Padding(
@@ -60,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ScaffoldMessenger.of(context)
                           ..hideCurrentSnackBar()
                           ..showSnackBar(const SnackBar(
-                              content: Text("Kamu telah menekan tombol Lihat Item!")));
+                              content: Text(
+                                  "Kamu telah menekan tombol Lihat Item!")));
                       }),
                   MainButton(
                       icon: Icons.add,
@@ -70,7 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         ScaffoldMessenger.of(context)
                           ..hideCurrentSnackBar()
                           ..showSnackBar(const SnackBar(
-                              content: Text("Kamu telah menekan tombol Tambah Item!")));
+                              content: Text(
+                                  "Kamu telah menekan tombol Tambah Item!")));
                       }),
                   MainButton(
                       icon: Icons.logout,
@@ -79,8 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       onTap: () {
                         ScaffoldMessenger.of(context)
                           ..hideCurrentSnackBar()
-                          ..showSnackBar(
-                              const SnackBar(content: Text("Kamu telah menekan tombol Logout!")));
+                          ..showSnackBar(const SnackBar(
+                              content:
+                                  Text("Kamu telah menekan tombol Logout!")));
                       }),
                 ],
               ),
