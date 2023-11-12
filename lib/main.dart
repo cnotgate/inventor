@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // import 'package:inventor/components/main_button.dart';
 
-import 'home_page.dart';
+import 'screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
