@@ -22,7 +22,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Inventor", textAlign: TextAlign.center, style: GoogleFonts.roboto()),
+        title: Text("Inventor",
+            textAlign: TextAlign.center, style: GoogleFonts.roboto()),
         centerTitle: true,
       ),
       drawer: const GenericDrawer(),
@@ -48,17 +49,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       onTap: () {
                         // Pushes LihatItem to the navigation stack when button is clicked
                         Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => const LihatItem()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LihatItem()));
                       }),
                   MainButton(
                       icon: Icons.add,
                       text: "Tambah Item",
                       color: Colors.indigo,
                       onTap: () {
+                        // Pushes AddItem to the navigation stack when button is clicked
                         Navigator.push(
-                            // Pushes AddItem to the navigation stack when button is clicked
                             context,
-                            MaterialPageRoute(builder: (context) => const TambahItem()));
+                            MaterialPageRoute(
+                                builder: (context) => const TambahItem()));
                       }),
                   MainButton(
                       icon: Icons.logout,
@@ -67,8 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       onTap: () {
                         ScaffoldMessenger.of(context)
                           ..hideCurrentSnackBar()
-                          ..showSnackBar(
-                              const SnackBar(content: Text("Kamu telah menekan tombol Logout!")));
+                          ..showSnackBar(const SnackBar(
+                              content:
+                                  Text("Kamu telah menekan tombol Logout!")));
                       }),
                 ],
               ),
