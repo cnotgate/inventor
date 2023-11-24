@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-// import 'package:inventor/components/main_button.dart';
-
-import 'screens/home_page.dart';
+import 'package:inventor/screens/login.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +13,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of the app.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        useMaterial3: true,
+    return Provider(
+      create: (_) {
+        CookieRequest request = CookieRequest();
+        return request;
+      },
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+          useMaterial3: true,
+        ),
+        home: const LoginPage(),
       ),
-      home: const MyHomePage(),
     );
   }
 }

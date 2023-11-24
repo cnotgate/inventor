@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton(
-      {super.key, required this.icon, required this.text, required this.onTap, this.color});
+      {super.key,
+      required this.icon,
+      required this.text,
+      required this.onTap,
+      this.color,
+      required this.number});
 
   // This widget is for generating button in the home page
 
@@ -10,6 +15,7 @@ class MainButton extends StatelessWidget {
   final String text;
   final Color? color;
   final Function()? onTap;
+  final int number;
 
   @override
   Widget build(BuildContext context) {
