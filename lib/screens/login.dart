@@ -3,6 +3,8 @@ import 'package:inventor/screens/home_page.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/generic_button.dart';
+
 void main() {
   runApp(const LoginApp());
 }
@@ -60,13 +62,12 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             const SizedBox(height: 24.0),
-            ElevatedButton(
+            GenericButton(
               onPressed: () async {
                 String username = _usernameController.text;
                 String password = _passwordController.text;
 
-                final response =
-                    await request.login("https://ahmad-fatih22-tugas.pbp.cs.ui.ac.id/auth/login/", {
+                final response = await request.login("http://10.0.2.2:8000/auth/login/", {
                   'username': username,
                   'password': password,
                 });
@@ -80,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                   ScaffoldMessenger.of(context)
                     ..hideCurrentSnackBar()
-                    ..showSnackBar(SnackBar(content: Text("$message Selamat datang, $uname.")));
+                    ..showSnackBar(SnackBar(content: Text(message)));
                 } else {
                   showDialog(
                     context: context,
@@ -99,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                   );
                 }
               },
-              child: const Text('Login'),
+              text: 'Login',
             ),
           ],
         ),
